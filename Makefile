@@ -22,7 +22,7 @@ rendered_preview_html = $(addprefix $(RENDERED_PREVIEW_DIR)/,$(target_html_files
 deploy_html = $(addprefix $(DEPLOY_DIR)/, $(target_html_files))
 deploy_preview_html = $(addprefix $(DEPLOY_PREVIEW_DIR)/, $(target_html_files))
 
-html: $(all_html)
+html: $(deploy_html)
 
 test:
 	./test/test.sh

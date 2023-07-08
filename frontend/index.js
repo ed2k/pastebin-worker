@@ -203,7 +203,8 @@ window.addEventListener('load', () => {
     if (inputType === 'file') {
       fd.append('c', file)
     } else {
-      fd.append('c', pasteEditArea.prop('value'))
+      const s = new SimpleCrypto('a secret');
+      fd.append('c', s.encrypt(pasteEditArea.prop('value')))
     }
 
     if (expiration.length > 0) fd.append('e', expiration)
@@ -228,7 +229,8 @@ window.addEventListener('load', () => {
     if (inputType === 'file') {
       fd.append('c', file)
     } else {
-      fd.append('c', pasteEditArea.prop('value'))
+      const s = new SimpleCrypto('a secret');
+      fd.append('c', s.encrypt(pasteEditArea.prop('value')))
     }
 
     if (expiration.length > 0) fd.append('e', expiration)
